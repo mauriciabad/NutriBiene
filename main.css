@@ -1,0 +1,20 @@
+header{
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.08);
+  padding: 4px 0;
+  font-size: 2em;
+  font-family: 'Lobster';
+}
+
+body{
+  background-color: #D5CDBB;
+  margin: 0;
+}
+
+.orange{
+  color: #e69138;
+}
+
+.green{
+  color: #6aa84f;
+}
