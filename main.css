@@ -1,20 +1,100 @@
 header{
   text-align: center;
   background-color: rgba(0, 0, 0, 0.08);
-  padding: 4px 0;
+  height: 1.5em;
   font-size: 2em;
-  font-family: 'Lobster';
+  padding: 0.25em 0;
+  line-height: 1;
+  font-family: 'Lobster', cursive;
 }
 
 body{
   background-color: #D5CDBB;
   margin: 0;
+  font-family: 'Source Serif Pro', serif;
+}
+
+input{
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 3px;
+  margin: 8px;
+  font-size: 1em;
+  padding: 4px 8px;
+  outline: none;
+  font-family: 'Mali', cursive;
+  text-align: center;
+}
+
+input:focus, button:focus{
+  border: 1px solid #E8862Ecc;
+}
+
+button{
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 3px;
+  margin: 8px;
+  font-size: 1em;
+  padding: 4px 8px;
+  outline: none;
+  font-family: 'Mali', cursive;
+  text-align: center;
+  cursor: pointer;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+h2{
+  color: rgba(0, 0, 0, 0.666);
+  font-weight: normal;
+  margin: 0.5em;
 }
 
 .orange{
-  color: #e69138;
+  color: #E9872A;
 }
 
 .green{
-  color: #6aa84f;
+  color: #ADB03D;
+}
+
+.handmade{
+  font-family: 'Mali', cursive;
+}
+
+.home-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 3em);
+  text-align: center;
+}
+.home-section > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-section > div i{
+  display: block;
+  font-size: 2em;
+}
+
+.login-container{
+  /* background-color: green; */
+  flex-grow: 1;
+}
+.register-container{
+  /* background-color: orange; */
+  flex-grow: 1;
+  cursor: pointer;
+  width: 100%;
+}
+.divider{
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  width: 50%;
 }

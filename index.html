@@ -5,18 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Lobster|Mali:300,400,400i,700|Source+Serif+Pro:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <link rel="stylesheet" href="main.css">
   <title>NutriBiene</title>
 </head>
 <body>
   <header><span class="green">Nutri</span><span class="orange">Biene</span></header>
-  <section>
+  <section class="home-section">
     <div class="login-container">
-      
+      <div class="login">
+        <i class="material-icons">person_outline</i>
+        <h2>Welcome again</h2>
+        <input type="user" name="user" id="user-login" value="lovelyGrandma" placeholder="Username"><br>
+        <input type="password" name="pasword" id="pasword-login" value="MyPasword123" placeholder="Pasword"><br>
+        <button>Log-In</button>
+      </div>
     </div>
-    <div class="register-container">
-
+    <div class="divider"></div>
+    <div class="register-container" onclick="startSurvey();">
+      <div>
+        <i class="material-icons">restaurant_menu</i>
+        <h2>Tell us what you like</h2>
+      </div>
     </div>
   </section>
 </body>
