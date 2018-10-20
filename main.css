@@ -94,7 +94,7 @@ section{
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: calc(100vh - 3em);
+  height: 100vh;
   text-align: center;
   transition: opacity 300ms ease-out;
 }
@@ -127,7 +127,7 @@ section{
 }
 
 .footer-active{
-  color: #635943;
+  color: #ADB03D;
 }
 footer{
   display: flex;
@@ -146,6 +146,7 @@ footer > div{
   min-width: 75px;
   cursor: pointer;
   box-sizing: border-box;
+  color: #666;
 }
 footer span{
   display: block;
@@ -161,10 +162,14 @@ footer i{
 
 .menu-day{
   display: flex;
+  justify-content: center;
   overflow-x: scroll;
   overflow-y: hidden;
   scroll-behavior: smooth;
   padding: 4px;
+}
+.menu-day span{
+  display: block;
 }
 .menu-day img{
   width: 33vw;
@@ -185,3 +190,33 @@ footer i{
 /* .menu-day > div:hover{
   transform: scale(1.025);
 } */
+
+
+#section-list{
+  padding-right: 16px;
+  padding-left: 16px;
+}
+.list-container{
+  background: url('img/paper.png') repeat;
+  margin: 0 auto;
+  border-radius: 3px;
+  padding: 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+}
+.list-container h4{
+  margin: 0 0 8px;
+}
+.list-container ul{
+  list-style-type: disc;
+  margin: 0;
+  list-style-type: circle;
+}
+
+#section-search{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

@@ -26,3 +26,56 @@ function showSection(name) {
 function getMenuFromUser(name) {
   //TODO ajax
 }
+
+function showReceipt(id) {
+  request(
+    "https://0ii9putnfk.execute-api.eu-west-3.amazonaws.com/Pre//receipt-info",
+    {"IdReceipt": id},
+    "POST",
+    (response) => {
+      
+    });
+  showSpinner();
+}
+
+
+
+
+
+
+function request(url, data, method, callback) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.overrideMimeType('application/json');
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      let response = {};
+      try{
+        response = JSON.parse(xhttp.responseText)
+      }catch(e){
+        response = {"error": 'Unable to parse this response: \n'+xhttp.responseText};
+      }
+      if (response.error != undefined) {
+        console.error(response.error);
+      }else{
+        callback(response);
+      }
+    }
+  }
+
+  if(method == 'GET'){
+    xhttp.open('GET', url+'?'+urlQueryEncode(data), true);
+    xhttp.send();
+  }
+  else if(method == 'POST'){
+    xhttp.open('POST', url, true);
+    xhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send(urlQueryEncode(data));
+  }
+}
+
+function urlQueryEncode(data={}) {  
+  return (data === null) ? '' : Object.keys(data)
+  .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
+  .join('&');
+}

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Lobster|Mali:300,400,400i,700|Source+Serif+Pro:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -18,7 +18,7 @@
       <i class="material-icons">restaurant_menu</i>
       <span>Diet</span>
     </div>
-    <div id="footer-list" onclick="showSection('list');">
+    <div id="footer-list" onclick="showSection('list');" class="footer-active">
       <i class="material-icons">shopping_cart_outline</i>
       <span>List</span>
     </div>
@@ -26,12 +26,12 @@
       <i class="material-icons">search_outline</i>
       <span>Search</span>
     </div>
-    <div id="footer-profile" onclick="showSection('profile');" class="footer-active">
+    <div id="footer-profile" onclick="showSection('profile');">
       <i class="material-icons">person_outline</i>
       <span>Profile</span>
     </div>
   </footer>
-  <section id="section-profile" class="section-active">
+  <section id="section-profile" class="section-hidden">
     <div class="login-container">
       <div class="login">
         <i class="material-icons">person_outline</i>
@@ -60,103 +60,118 @@
     <div class="menu-container">
       <h2>Monday</h2>
       <div class="menu-day">
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
       </div>
       <h2>Tuesday</h2>
       <div class="menu-day">
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
       </div>
       <h2>Wednesday</h2>
       <div class="menu-day">
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
       </div>
       <h2>Thursday</h2>
       <div class="menu-day">
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
-        <div>
+        <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
       </div>
     </div>
   </section>
-  <section id="section-list" class="section-hidden">
-    
+  <section id="section-list" class="section-active">
+    <br>
+    <h2>Shopping List</h2>
+    <h3>estimated cost is <span id="list-cost">64</span>€</h3>
+    <br>
+    <div class="divider"></div>
+    <br>
+    <div class="list-container">
+      <h4>Grocery list:</h4>
+      <ul>
+        <li>6u - Onion</li>
+        <li>4kg - Pasta</li>
+        <li>2u - Green Pepper</li>
+        <li>1l - Whater</li>
+      </ul>
+    </div>
   </section>
   <section id="section-search" class="section-hidden">
-    
+    <label for="code-product">Code:</label>
+    <input type="text" name="code-product" id="code-product" placeholder="1652387652">
   </section>
   <script src="script.js"></script>
 </body>
