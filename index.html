@@ -8,18 +8,37 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <link rel="stylesheet" href="main.css">
+  <meta name="theme-color" content="#635943">
   <title>NutriBiene</title>
 </head>
 <body>
   <header><span class="green">Nutri</span><span class="orange">Biene</span></header>
-  <section class="home-section">
+  <footer>
+    <div id="footer-diet" onclick="showSection('diet');">
+      <i class="material-icons">restaurant_menu</i>
+      <span>Diet</span>
+    </div>
+    <div id="footer-list" onclick="showSection('list');">
+      <i class="material-icons">shopping_cart_outline</i>
+      <span>List</span>
+    </div>
+    <div id="footer-search" onclick="showSection('search');">
+      <i class="material-icons">search_outline</i>
+      <span>Search</span>
+    </div>
+    <div id="footer-profile" onclick="showSection('profile');" class="footer-active">
+      <i class="material-icons">person_outline</i>
+      <span>Profile</span>
+    </div>
+  </footer>
+  <section id="section-profile" class="section-active">
     <div class="login-container">
       <div class="login">
         <i class="material-icons">person_outline</i>
         <h2>Welcome again</h2>
-        <input type="user" name="user" id="user-login" value="lovelyGrandma" placeholder="Username"><br>
+        <input type="user" name="user" id="user-login" value="LovelyGrandma" placeholder="Username"><br>
         <input type="password" name="pasword" id="pasword-login" value="MyPasword123" placeholder="Pasword"><br>
-        <button>Log-In</button>
+        <button onclick="login(document.getElementById('user-login').value);">Log-In</button>
       </div>
     </div>
     <div class="divider"></div>
@@ -30,6 +49,114 @@
         <button onclick="startSurvey();">Register</button>
       </div>
     </div>
+  </section>
+  <section id="section-diet" class="section-hidden">
+    <br>
+    <h2>Welcome LovelyGrandma</h2>
+    <h3>this is your diet for the week :D</h3>
+    <br>
+    <div class="divider"></div>
+    <br>
+    <div class="menu-container">
+      <h2>Monday</h2>
+      <div class="menu-day">
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+      </div>
+      <h2>Tuesday</h2>
+      <div class="menu-day">
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+      </div>
+      <h2>Wednesday</h2>
+      <div class="menu-day">
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+      </div>
+      <h2>Thursday</h2>
+      <div class="menu-day">
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+        <div>
+          <img src="img/spaguetti_rojo.jpg">
+          <span>Dish Name</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="section-list" class="section-hidden">
+    
+  </section>
+  <section id="section-search" class="section-hidden">
+    
   </section>
   <script src="script.js"></script>
 </body>
