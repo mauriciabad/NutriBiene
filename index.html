@@ -50,7 +50,7 @@
       </div>
     </div>
   </section>
-  <section id="section-diet" class="section-active">
+  <section id="section-diet" class="section-hidden">
     <br>
     <br>
     <h2>Welcome <span id="diet-user">LovelyGrandma</span></h2>
@@ -61,14 +61,6 @@
     <div class="menu-container">
       <h2>Monday</h2>
       <div class="menu-day">
-        <div onclick="showReceipt('Swiss chard with garlic');">
-          <img src="img/spaguetti_rojo.jpg">
-          <span>Dish Name</span>
-        </div>
-        <div onclick="showReceipt('Swiss chard with garlic');">
-          <img src="img/spaguetti_rojo.jpg">
-          <span>Dish Name</span>
-        </div>
         <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
@@ -96,48 +88,9 @@
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
         </div>
-        <div onclick="showReceipt('Swiss chard with garlic');">
-          <img src="img/spaguetti_rojo.jpg">
-          <span>Dish Name</span>
-        </div>
-        <div onclick="showReceipt('Swiss chard with garlic');">
-          <img src="img/spaguetti_rojo.jpg">
-          <span>Dish Name</span>
-        </div>
       </div>
       <h2>Wednesday</h2>
       <div class="menu-day">
-        <div onclick="showReceipt('Swiss chard with garlic');">
-          <img src="img/spaguetti_rojo.jpg">
-          <span>Dish Name</span>
-        </div>
-        <div onclick="showReceipt('Swiss chard with garlic');">
-          <img src="img/spaguetti_rojo.jpg">
-          <span>Dish Name</span>
-        </div>
-        <div onclick="showReceipt('Swiss chard with garlic');">
-          <img src="img/spaguetti_rojo.jpg">
-          <span>Dish Name</span>
-        </div>
-        <div onclick="showReceipt('Swiss chard with garlic');">
-          <img src="img/spaguetti_rojo.jpg">
-          <span>Dish Name</span>
-        </div>
-        <div onclick="showReceipt('Swiss chard with garlic');">
-          <img src="img/spaguetti_rojo.jpg">
-          <span>Dish Name</span>
-        </div>
-      </div>
-      <h2>Thursday</h2>
-      <div class="menu-day">
-        <div onclick="showReceipt('Swiss chard with garlic');">
-          <img src="img/spaguetti_rojo.jpg">
-          <span>Dish Name</span>
-        </div>
-        <div onclick="showReceipt('Swiss chard with garlic');">
-          <img src="img/spaguetti_rojo.jpg">
-          <span>Dish Name</span>
-        </div>
         <div onclick="showReceipt('Swiss chard with garlic');">
           <img src="img/spaguetti_rojo.jpg">
           <span>Dish Name</span>
@@ -171,26 +124,28 @@
       </ul>
     </div>
   </section>
-  <section id="section-search" class="section-hidden">
+  <section id="section-search" class="section-active">
+    <div id="scanner-container"></div>
     <label for="code-product">Code:</label>
     <input type="text" name="code-product" id="code-product" placeholder="1652387652">
   </section>
   <section id="section-receipt" class="section-hidden">
     <div class="receipt-cover">
-      <img src="https://s3.eu-west-3.amazonaws.com/nutribiene.tech/img/acelgas-con-ajada.jpg">
-      <span>Swiss chard with garlic</span>
+      <img id="receipt-img" src="https://s3.eu-west-3.amazonaws.com/nutribiene.tech/img/acelgas-con-ajada.jpg">
+      <span id="receipt-name">Swiss chard with garlic</span>
     </div>
-    <div class="receipt-line"><span><i class="material-icons">whatshot_outline</i><span id="receipt-calories">600</span> calories</span><span></span><span><i class="material-icons">av_timer_outline</i><span id="receipt-time">15</span> min</span></div>
+    <div class="receipt-line"><span><i class="material-icons">whatshot_outline</i><span id="receipt-calories">600</span> kcal</span><span></span><span><i class="material-icons">av_timer_outline</i><span id="receipt-time">15</span> min</span></div>
     <br>
     <h2>Ingredients</h2>
     <div class="divider"></div>
     <h3>for <span id="receipt-calories">2</span> people</h3>
     <br>
-    <ul>
+    <ul id="receipt-list">
       <li>1u - Onion</li>
       <li>200ml - Whater</li>
     </ul>
   </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

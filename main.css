@@ -216,14 +216,17 @@ ul{
 }
 
 #section-search{
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+
 }
-
-
+#scanner-container canvas, #scanner-container video{
+ width: 100vw;
+}
+/* In order to place the tracking correctly */
+canvas.drawing, canvas.drawingBuffer {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 
 
 
