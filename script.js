@@ -10,7 +10,7 @@ function login(name) {
   getMenuFromUser(name);
 }
 
-function showSection(name) {
+function showSection(name, activity=false) {
   for (let section of document.getElementsByClassName('section-active')) {    
     section.classList.remove('section-active');
     section.classList.add('section-hidden');  
@@ -18,10 +18,12 @@ function showSection(name) {
   document.getElementById("section-"+name).classList.remove('section-hidden');  
   document.getElementById("section-"+name).classList.add('section-active');  
 
-  for (let footer of document.getElementsByClassName('footer-active')) {    
-    footer.classList.remove('footer-active');
+  if (!activity) {
+    for (let footer of document.getElementsByClassName('footer-active')) {    
+      footer.classList.remove('footer-active');
+    }
+    document.getElementById("footer-"+name).classList.add('footer-active');  
   }
-  document.getElementById("footer-"+name).classList.add('footer-active');  
 }
 function getMenuFromUser(name) {
   //TODO ajax
@@ -29,16 +31,24 @@ function getMenuFromUser(name) {
 
 function showReceipt(id) {
   request(
-    "https://0ii9putnfk.execute-api.eu-west-3.amazonaws.com/Pre//receipt-info",
+    "https://0ii9putnfk.execute-api.eu-west-3.amazonaws.com/Pre/receipt-info",
     {"IdReceipt": id},
     "POST",
     (response) => {
+      console.log(response);
       
     });
-  showSpinner();
+    showSection('receipt', true);
+    history.pushState('receipt', id, "#receipt");
+
+  // showSpinner();
 }
 
-
+window.onpopstate = (event) => {
+  if (event.state != 'receipt') {
+    showSection('diet');
+  }
+};
 
 
 
@@ -68,9 +78,8 @@ function request(url, data, method, callback) {
   }
   else if(method == 'POST'){
     xhttp.open('POST', url, true);
-    xhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send(urlQueryEncode(data));
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send(JSON.stringify(data));
   }
 }
 
