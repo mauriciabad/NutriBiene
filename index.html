@@ -11,7 +11,7 @@
   <meta name="theme-color" content="#635943">
   <title>NutriBiene</title>
 </head>
-<body>
+<body onload="showDiet('LovelyGrandma')">
   <header><span class="green">Nutri</span><span class="orange">Biene</span></header>
   <footer>
     <div id="footer-diet" onclick="showSection('diet');" class="footer-active">
@@ -126,8 +126,11 @@
   </section>
   <section id="section-search" class="section-active">
     <div id="scanner-container"></div>
-    <label for="code-product">Code:</label>
-    <input type="text" name="code-product" id="code-product" placeholder="1652387652">
+    <div>
+      <label for="code-product">Code:</label>
+      <input type="text" name="code-product" id="code-product" placeholder="1652387652">
+      <button onclick="showIngredient(document.getElementById('code-product').value)">Check</button>
+    </div>
   </section>
   <section id="section-receipt" class="section-hidden">
     <div class="receipt-cover">
@@ -144,6 +147,9 @@
       <li>1u - Onion</li>
       <li>200ml - Whater</li>
     </ul>
+  </section>
+  <section id="section-ingredient" class="section-hidden">
+
   </section>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
   <script src="script.js"></script>

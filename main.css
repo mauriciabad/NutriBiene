@@ -215,11 +215,12 @@ ul{
   list-style-type: circle;
 }
 
-#section-search{
-
+#section-search > div{
+  margin: 0 auto;
 }
 #scanner-container canvas, #scanner-container video{
  width: 100vw;
+
 }
 /* In order to place the tracking correctly */
 canvas.drawing, canvas.drawingBuffer {

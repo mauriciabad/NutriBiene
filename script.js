@@ -84,6 +84,31 @@ function showDiet(user) {
 
 }
 
+function showIngredient(id){
+  request(`https://world.openfoodfacts.org/api/v0/product/${id}.json`, 
+    {}, 
+    "POST", 
+    (response) => {
+      if(response.status_verbose == "product found"){
+          console.log("In order: image, name, BieneScore, NovaScore, Ingredients from palm oil, nutrient levels(array), addtivie tags, ingredients");
+          console.log(response.product.image_url);
+          console.log(response.product.product_name);
+          console.log(response.product.nutrition_grades);
+          console.log(response.product.nova_groups);
+          console.log(response.product.ingredients_that_may_be_from_palm_oil_tags);
+          console.log(response.product.nutrient_levels);                        
+          console.log(response.product.additives_tags);
+          console.log(response.product.ingredients_text);          
+      }
+    }
+  );
+}
+
+
+
+
+
+
 
 var _scannerIsRunning = false;
 var code = null;
@@ -137,21 +162,7 @@ function startScanner() {
 
 Quagga.onDetected(function (result) {
   code = result.codeResult.code;
-  var url = "https://world.openfoodfacts.org/api/v0/product/"+code+".json";
-  console.log("Barcode detected and processed : " + code);
-  request(url, {}, "POST", (response) => {
-      if(response.status_verbose == "product found"){
-          console.log("In order: image, name, BieneScore, NovaScore, Ingredients from palm oil, nutrient levels(array), addtivie tags, ingredients");
-          console.log(response.product.image_url);
-          console.log(response.product.product_name);
-          console.log(response.product.nutrition_grades);
-          console.log(response.product.nova_groups);
-          console.log(response.product.ingredients_that_may_be_from_palm_oil_tags);
-          console.log(response.product.nutrient_levels);                        
-          console.log(response.product.additives_tags);
-          console.log(response.product.ingredients_text);          
-      }
-  });
+  document.getElementById('code-product').value = code;
 });
 
 Quagga.onProcessed(function (result) {
